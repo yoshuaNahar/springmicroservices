@@ -1,0 +1,29 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: "file://${HOME}/Documents/IdeaProjects/springmicroservices/configs"
+  profiles.active: native
+
+# If you where using git use this below:
+#        git:
+#          uri: ${HOME}/Documents/IdeaProjects/springmicroservices/git-config-repo
+
+# If you are using git online use this below:
+#        git:
+#          uri: https://github.com/springmicro/config-repo
+#          username: springmicro
+#          password: password123
+#          search-paths: userservice, itemservice
+
+
+# Name the property files the same as your spring.application.name.
+# The a client requests a config file, the config service will return the property file that has
+# the name of the service, but it will also include all the properties from existing
+# application.properties/application.yml if not already present.
+
+

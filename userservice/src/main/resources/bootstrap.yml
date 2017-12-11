@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: userservice
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: default
+
+
+# We set management.security.enabled=false in the client app to make this easy to
+# test(by default since Spring Boot 1.5 the Actuator endpoints are secure by default).
+# By default you can still access them over JMX if you don’t set the flag.
+management:
+  security:
+    enabled: false
